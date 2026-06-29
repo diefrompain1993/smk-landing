@@ -13,9 +13,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="preload" as="image" href="./assets/screenshots/product-report-drawer.png" />
-    <link rel="preload" as="image" href="./assets/screenshots/product-dashboard-analytics.png" />
-    <link rel="preload" as="image" href="./assets/screenshots/product-dashboard-analytics-mobile.png" media="(max-width: 620px)" />
+    <link rel="preload" as="image" href="./assets/screenshots/product-to-full.png" />
+    <link rel="preload" as="image" href="./assets/screenshots/product-admin-reports-full.png" />
     <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
   </head>
   <body>
     <header class="topbar" aria-label="Навигация">
@@ -38,7 +39,7 @@
         <div class="hero-content">
           <h1 id="hero-title">SMK: контроль инженеров и объектов через защищенные NFC-метки</h1>
           <p class="hero-copy">
-            Решение помогает видеть, кто был на объекте, когда была подтверждена работа с журналом и какие отчеты с фото или видео переданы в офис, без проводной СКУД-инфраструктуры на каждой точке.
+            Без проводной СКУД-инфраструктуры на каждой точке помогает уверенно знать, кто был на объекте, когда была подтверждена работа с журналом и какие отчеты с фото или видео переданы в офис. Так появляется надежная и простая система для Заказчиков, контролирующая фактическое пребывание подрядных организаций на объектах.
           </p>
           <div class="hero-actions" aria-label="Основные действия">
             <a class="button primary" href="#reports">Посмотреть интерфейс</a>
@@ -170,7 +171,7 @@
               <strong>Офлайн-очередь</strong>
               <p>Если связи нет, событие сохраняется и отправляется после восстановления сети.</p>
             </div>
-            <div class="security-node dark">
+            <div class="security-node accent">
               <span>04</span>
               <strong>Проверка в офисе</strong>
               <p>В админке видно, где и когда была сделана отметка: уже синхронизирована она или еще ожидает связи.</p>
@@ -212,50 +213,146 @@
         </figure>
       </section>
 
-      <section class="section showcase compact-showcase" aria-labelledby="to-title">
+      <section id="admin" class="section product-overview" aria-labelledby="product-overview-title">
         <div class="section-head">
-          <p class="eyebrow">ТО</p>
-          <h2 id="to-title">По объекту видна проблема, ответственные и история активности</h2>
+          <p class="eyebrow">ТО и веб-админка</p>
+          <h2 id="product-overview-title">Рабочие экраны выглядят как единая система контроля</h2>
           <p>
-            В разделе ТО строка объекта открывает drawer с последним сканом, договором, ответственным инженером и историей отметок.
+            Для демонстрации важен не отдельный фрагмент таблицы, а полный интерфейс: навигация, контекст страницы и детали, которые открываются прямо поверх рабочего экрана.
           </p>
         </div>
-        <figure class="screenshot large">
-          <img src="./assets/screenshots/product-to-drawer.png" alt="Детали объекта в разделе ТО веб-админки SMK" />
-          <figcaption>Карточка объекта помогает быстро понять, что произошло и кто отвечает за следующий шаг.</figcaption>
-        </figure>
+
+        <div class="product-overview-grid">
+          <article class="product-screen-card">
+            <div class="product-screen-copy">
+              <p class="eyebrow">ТО</p>
+              <h3>Проблема, ответственные и история активности видны в одном месте</h3>
+              <p>Строка объекта открывает детальную панель с последней отметкой, договором, ответственным инженером и историей действий.</p>
+            </div>
+            <figure class="screenshot product-screen-shot">
+              <img src="./assets/screenshots/product-to-full.png" alt="Полный экран раздела ТО в веб-админке SMK с боковым меню и деталями объекта" />
+              <figcaption>Полный экран ТО с карточкой объекта поверх рабочей таблицы.</figcaption>
+            </figure>
+          </article>
+
+          <article class="product-screen-card">
+            <div class="product-screen-copy">
+              <p class="eyebrow">Веб-админка</p>
+              <h3>Отчеты с фото и видео открываются прямо поверх рабочей таблицы</h3>
+              <p>Руководитель видит дату, инженера, объект, текст отчета и вложения без перехода между разными страницами.</p>
+            </div>
+            <figure class="screenshot product-screen-shot">
+              <img src="./assets/screenshots/product-admin-reports-full.png" alt="Полный экран раздела отчетов веб-админки SMK с боковым меню и детальной панелью отчета" />
+              <figcaption>Полный экран отчетов с боковым меню и детальной панелью выбранного отчета.</figcaption>
+            </figure>
+          </article>
+        </div>
       </section>
 
-      <section id="admin" class="section screens" aria-labelledby="admin-title">
+      <section class="section live-analytics" aria-labelledby="analytics-title">
         <div class="section-head">
-          <p class="eyebrow">Веб-админка</p>
-          <h2 id="admin-title">Контроль без лишних таблиц и переписок</h2>
+          <p class="eyebrow">Живая аналитика</p>
+          <h2 id="analytics-title">Три интерактивных показателя для быстрой оценки смены</h2>
           <p>
-            Админка показывает руководителю операционную картину: присутствие инженеров, проблемные объекты, отчеты, метки, офлайн-события и динамику по дням.
+            Эти графики работают прямо на лендинге: данные можно переключать, выделять сегменты и быстро считывать состояние объектов.
           </p>
         </div>
 
-        <figure class="screenshot dashboard-showcase">
-          <picture>
-            <source media="(max-width: 620px)" srcset="./assets/screenshots/product-dashboard-analytics-mobile.png" />
-            <img src="./assets/screenshots/product-dashboard-analytics.png" alt="Главная страница админки SMK с графиками и показателями по инженерам и объектам" />
-          </picture>
-          <figcaption>Главная админки: присутствие, отчеты, объекты, NFC-метки и зоны внимания на одном экране.</figcaption>
-        </figure>
+        <div class="admin-widgets" data-analytics aria-label="Интерактивная аналитика SMK">
+          <article class="widget-card trend-widget interactive-widget" data-trend-widget>
+            <div class="widget-head">
+              <div>
+                <h3>Динамика событий</h3>
+                <p>Присутствие, журналы и отчеты по активным дням.</p>
+              </div>
+              <div class="segmented-control" aria-label="Период графика">
+                <button type="button" class="is-active" data-range="week">7 дней</button>
+                <button type="button" data-range="today">Сегодня</button>
+                <button type="button" data-range="month">Месяц</button>
+              </div>
+            </div>
+            <div class="widget-kpis">
+              <div><strong data-trend-kpi="events">126</strong><span>событий</span></div>
+              <div><strong data-trend-kpi="media">94%</strong><span>с медиа</span></div>
+              <div><strong data-trend-kpi="sync">7</strong><span>ожидают связи</span></div>
+            </div>
+            <svg class="trend-chart" viewBox="0 0 640 260" role="img" aria-label="Интерактивный график активности">
+              <defs>
+                <linearGradient id="trendFill" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#2258e8" stop-opacity="0.22" />
+                  <stop offset="100%" stop-color="#2258e8" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+              <g class="grid-lines">
+                <line x1="42" x2="604" y1="50" y2="50" />
+                <line x1="42" x2="604" y1="96" y2="96" />
+                <line x1="42" x2="604" y1="142" y2="142" />
+                <line x1="42" x2="604" y1="188" y2="188" />
+              </g>
+              <path class="area" data-trend-area />
+              <path class="line blue" data-trend-line />
+              <g class="trend-dots" data-trend-dots></g>
+              <g class="axis" data-trend-axis></g>
+            </svg>
+            <div class="chart-insight" data-trend-insight>
+              <strong>Пик недели</strong>
+              <span>Воскресенье: больше всего подтвержденных событий и отчетов с медиа.</span>
+            </div>
+          </article>
 
-        <div class="screen-grid">
-          <figure class="screenshot">
-            <img src="./assets/screenshots/product-tags.png" alt="Экран управления NFC-метками" />
-            <figcaption>Метки: инициализация, привязка к объекту и выбор типа.</figcaption>
-          </figure>
-          <figure class="screenshot">
-            <img src="./assets/screenshots/product-object-statuses.png" alt="Экран статусов объектов" />
-            <figcaption>ТО: статус объекта, последний скан, ответственные и договор.</figcaption>
-          </figure>
-          <figure class="screenshot">
-            <img src="./assets/screenshots/product-reports.png" alt="Список отчетов инженеров в веб-админке SMK" />
-            <figcaption>Отчеты: дата, объект, инженер, вложения и быстрый переход к деталям.</figcaption>
-          </figure>
+          <article class="widget-card status-widget interactive-widget" data-status-widget>
+            <div class="widget-head">
+              <div>
+                <h3>Статус смены</h3>
+                <p>Кто на объекте и где нужна реакция.</p>
+              </div>
+            </div>
+            <div class="donut-row">
+              <div class="donut" data-donut>
+                <strong data-status-value>42</strong>
+                <span data-status-label>инженера</span>
+              </div>
+              <div class="legend-list">
+                <button type="button" class="is-active" data-status="onsite"><i class="green"></i><span>На объекте</span><b>31</b></button>
+                <button type="button" data-status="route"><i class="amber"></i><span>В пути</span><b>7</b></button>
+                <button type="button" data-status="missing"><i class="rose"></i><span>Без отметки</span><b>4</b></button>
+                <button type="button" data-status="reports"><i class="blue"></i><span>Отчетов</span><b>126</b></button>
+              </div>
+            </div>
+            <p class="metric-note" data-status-note>31 инженер уже подтвердил присутствие на объекте.</p>
+          </article>
+
+          <article class="widget-card coverage-widget interactive-widget" data-coverage-widget>
+            <div class="widget-head">
+              <div>
+                <h3>NFC-покрытие</h3>
+                <p>Какие объекты уже привязаны к рабочим меткам.</p>
+              </div>
+              <span data-coverage-pill>82%</span>
+            </div>
+            <div class="coverage-gauge" data-coverage-gauge>
+              <svg viewBox="0 0 160 160" role="img" aria-label="Покрытие объектов NFC-метками">
+                <defs>
+                  <linearGradient id="coverageGradient" x1="22" x2="138" y1="22" y2="138" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#2258e8" />
+                    <stop offset="100%" stop-color="#12a174" />
+                  </linearGradient>
+                </defs>
+                <circle class="gauge-bg" cx="80" cy="80" r="58"></circle>
+                <circle class="gauge-value" cx="80" cy="80" r="58"></circle>
+              </svg>
+              <div>
+                <strong data-coverage-value>82%</strong>
+                <span data-coverage-label>готовность по объектам</span>
+              </div>
+            </div>
+            <div class="progress-list">
+              <button type="button" class="is-active" data-coverage="orion" data-value="86"><span>БЦ Орион</span><b></b><strong>86%</strong></button>
+              <button type="button" data-coverage="north" data-value="72"><span>Северный квартал</span><b></b><strong>72%</strong></button>
+              <button type="button" data-coverage="west" data-value="61"><span>ЛЦ Запад</span><b></b><strong>61%</strong></button>
+            </div>
+            <p class="metric-note" data-coverage-note>На объекте закрыты основные точки присутствия и журнала.</p>
+          </article>
         </div>
       </section>
 
