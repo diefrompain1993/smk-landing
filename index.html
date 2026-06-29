@@ -285,20 +285,32 @@
               <span>Воскресенье: больше всего подтвержденных событий и отчетов с медиа.</span>
             </div>
             <div class="trend-summary" aria-label="Операционная сводка">
-              <div>
-                <span>Контроль журнала</span>
-                <strong data-trend-summary="journal">18</strong>
-                <small>подтверждений</small>
+              <div class="trend-mini-card journal" data-summary-card="journal">
+                <div class="mini-ring" aria-hidden="true"><span></span></div>
+                <div>
+                  <span class="mini-label">Контроль журнала</span>
+                  <strong><span data-trend-summary="journal">18</span></strong>
+                  <small>подтверждений за период</small>
+                </div>
+                <span class="mini-meter" aria-hidden="true"><i></i></span>
               </div>
-              <div>
-                <span>Ожидают связи</span>
-                <strong data-trend-summary="offline">7</strong>
-                <small>офлайн-событий</small>
+              <div class="trend-mini-card offline" data-summary-card="offline">
+                <div class="mini-ring" aria-hidden="true"><span></span></div>
+                <div>
+                  <span class="mini-label">Офлайн-очередь</span>
+                  <strong><span data-trend-summary="offline">7</span></strong>
+                  <small>событий ожидают связи</small>
+                </div>
+                <span class="mini-meter" aria-hidden="true"><i></i></span>
               </div>
-              <div>
-                <span>Фото и видео</span>
-                <strong data-trend-summary="media">94%</strong>
-                <small>отчетов с медиа</small>
+              <div class="trend-mini-card media" data-summary-card="media">
+                <div class="mini-ring" aria-hidden="true"><span></span></div>
+                <div>
+                  <span class="mini-label">Отчеты с медиа</span>
+                  <strong><span data-trend-summary="media">94%</span></strong>
+                  <small>подкреплены фото или видео</small>
+                </div>
+                <span class="mini-meter" aria-hidden="true"><i></i></span>
               </div>
             </div>
           </article>
