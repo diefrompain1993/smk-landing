@@ -54,7 +54,7 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 14px clamp(18px, 4vw, 52px);
+  padding: 12px clamp(18px, 3.6vw, 46px);
   background: rgba(247, 249, 253, 0.78);
   border-bottom: 1px solid rgba(220, 229, 242, 0.72);
   backdrop-filter: blur(18px);
@@ -69,8 +69,8 @@ a {
 }
 
 .brand img {
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
 }
 
 .nav {
@@ -92,11 +92,11 @@ a {
 
 .hero {
   position: relative;
-  min-height: 86svh;
+  min-height: 76svh;
   display: grid;
   align-items: center;
   overflow: hidden;
-  padding: 96px clamp(20px, 5vw, 68px) 64px;
+  padding: 84px clamp(20px, 4.5vw, 58px) 52px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -121,7 +121,7 @@ a {
 
 .hero-content {
   position: relative;
-  width: min(680px, 100%);
+  width: min(620px, 100%);
 }
 
 .eyebrow {
@@ -142,30 +142,30 @@ p {
 
 h1 {
   margin: 0;
-  max-width: 680px;
-  font-size: clamp(34px, 4.8vw, 58px);
-  line-height: 1.03;
+  max-width: 620px;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.08;
   letter-spacing: 0;
 }
 
 h2 {
   margin: 0;
-  max-width: 760px;
-  font-size: clamp(26px, 3.2vw, 40px);
-  line-height: 1.12;
+  max-width: 700px;
+  font-size: clamp(24px, 2.65vw, 34px);
+  line-height: 1.15;
 }
 
 h3 {
   margin: 0 0 8px;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.22;
 }
 
 .hero-copy {
-  max-width: 600px;
-  margin: 20px 0 0;
+  max-width: 560px;
+  margin: 18px 0 0;
   color: #364760;
-  font-size: clamp(16px, 1.55vw, 20px);
+  font-size: clamp(15px, 1.35vw, 18px);
 }
 
 .hero-actions {
@@ -177,11 +177,11 @@ h3 {
 
 .button {
   display: inline-flex;
-  min-height: 44px;
+  min-height: 40px;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  padding: 0 18px;
+  padding: 0 16px;
   border: 1px solid var(--line);
   font-weight: 760;
   transition:
@@ -209,20 +209,20 @@ h3 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
-  width: min(680px, 100%);
-  margin: 34px 0 0;
+  width: min(600px, 100%);
+  margin: 28px 0 0;
 }
 
 .hero-facts div {
-  min-height: 74px;
-  padding: 14px;
+  min-height: 66px;
+  padding: 12px;
   background: rgba(255, 255, 255, 0.78);
   border: 1px solid rgba(220, 229, 242, 0.9);
   border-radius: 8px;
 }
 
 .hero-facts dt {
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 800;
 }
 
@@ -234,21 +234,21 @@ h3 {
 }
 
 .section {
-  padding: clamp(52px, 6vw, 84px) clamp(20px, 5vw, 68px);
+  padding: clamp(44px, 5vw, 68px) clamp(20px, 4.5vw, 58px);
 }
 
 .section-head {
   display: grid;
-  gap: 14px;
-  max-width: 880px;
-  margin-bottom: 30px;
+  gap: 12px;
+  max-width: 780px;
+  margin-bottom: 24px;
 }
 
 .section-head p:not(.eyebrow) {
-  max-width: 720px;
+  max-width: 660px;
   margin: 0;
   color: var(--muted);
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .intro-grid,
@@ -260,8 +260,8 @@ h3 {
 
 .intro-grid article,
 .value-grid article {
-  min-height: 180px;
-  padding: 20px;
+  min-height: 156px;
+  padding: 18px;
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -301,16 +301,16 @@ h3 {
 .nfc-layout {
   display: grid;
   grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
-  gap: clamp(24px, 4vw, 52px);
+  gap: clamp(22px, 3.4vw, 42px);
   align-items: center;
 }
 
 .phone-card {
-  width: min(330px, 100%);
+  width: min(292px, 100%);
   margin-inline: auto;
   padding: 12px;
   background: #101828;
-  border-radius: 32px;
+  border-radius: 28px;
   box-shadow: var(--shadow);
 }
 
@@ -328,19 +328,19 @@ h3 {
 }
 
 .phone-screen {
-  min-height: 440px;
+  min-height: 376px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 26px;
+  padding: 22px;
   text-align: center;
   background: linear-gradient(180deg, #f9fbff, #eef5ff);
-  border-radius: 24px;
+  border-radius: 20px;
 }
 
 .tag-art {
-  width: 76px;
-  margin: 0 auto 22px;
+  width: 62px;
+  margin: 0 auto 18px;
 }
 
 .phone-label {
@@ -353,7 +353,7 @@ h3 {
 
 .phone-screen h3 {
   margin-top: 10px;
-  font-size: 25px;
+  font-size: 22px;
 }
 
 .scan-status {
@@ -361,13 +361,13 @@ h3 {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  margin: 30px auto 0;
-  padding: 10px 14px;
+  margin: 24px auto 0;
+  padding: 9px 12px;
   color: #066147;
   background: #e8fbf4;
   border: 1px solid #b7ebd8;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 760;
 }
 
@@ -390,8 +390,8 @@ h3 {
   display: grid;
   grid-template-columns: 58px 1fr;
   gap: 16px;
-  min-height: 108px;
-  padding: 18px;
+  min-height: 96px;
+  padding: 16px;
   background: #f8fbff;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -416,7 +416,7 @@ h3 {
 .security-layout {
   display: grid;
   grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.05fr);
-  gap: clamp(24px, 4vw, 48px);
+  gap: clamp(22px, 3.4vw, 40px);
   align-items: start;
 }
 
@@ -427,8 +427,8 @@ h3 {
 }
 
 .security-node {
-  min-height: 178px;
-  padding: 18px;
+  min-height: 154px;
+  padding: 16px;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -440,7 +440,7 @@ h3 {
   width: 36px;
   height: 36px;
   place-items: center;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
   color: #fff;
   background: #101828;
   border-radius: 8px;
@@ -451,7 +451,7 @@ h3 {
 .security-node strong {
   display: block;
   margin-bottom: 8px;
-  font-size: 17px;
+  font-size: 15px;
   line-height: 1.25;
 }
 
@@ -491,7 +491,7 @@ h3 {
 }
 
 .security-grid article {
-  padding: 20px;
+  padding: 16px;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -503,7 +503,7 @@ h3 {
 }
 
 .screenshot {
-  max-width: 1120px;
+  max-width: 840px;
   margin: 0 auto;
 }
 
@@ -519,7 +519,7 @@ h3 {
 }
 
 .screenshot.large {
-  max-width: 980px;
+  max-width: 700px;
 }
 
 .screenshot.large img {
@@ -527,18 +527,18 @@ h3 {
 }
 
 .screenshot figcaption {
-  margin-top: 14px;
+  margin-top: 10px;
   color: #4d5f79;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 650;
 }
 
 .screen-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  max-width: 1120px;
-  margin: 26px auto 0;
+  gap: 14px;
+  max-width: 840px;
+  margin: 22px auto 0;
 }
 
 .screen-grid .screenshot {
@@ -546,8 +546,8 @@ h3 {
 }
 
 .dashboard-showcase {
-  max-width: 1080px;
-  margin-bottom: 30px;
+  max-width: 800px;
+  margin-bottom: 24px;
 }
 
 .dashboard-showcase img {
@@ -564,7 +564,7 @@ h3 {
 }
 
 .value-grid article {
-  min-height: 190px;
+  min-height: 164px;
 }
 
 @media (max-width: 980px) {
