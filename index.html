@@ -199,20 +199,6 @@
         </div>
       </section>
 
-      <section id="reports" class="section showcase" aria-labelledby="reports-title">
-        <div class="section-head">
-          <p class="eyebrow">Отчеты</p>
-          <h2 id="reports-title">Детали работы открываются прямо из таблицы</h2>
-          <p>
-            Drawer с отчетом показывает дату, инженера, объект, описание работ и вложения. Это удобно для быстрой проверки без перехода между страницами.
-          </p>
-        </div>
-        <figure class="screenshot large">
-          <img src="./assets/screenshots/product-report-drawer.png" alt="Детали отчета с вложениями в веб-админке SMK" />
-          <figcaption>Отчет с фото и видео: все материалы по объекту собраны в одном месте.</figcaption>
-        </figure>
-      </section>
-
       <section id="admin" class="section product-overview" aria-labelledby="product-overview-title">
         <div class="section-head">
           <p class="eyebrow">ТО и веб-админка</p>
@@ -223,7 +209,7 @@
         </div>
 
         <div class="product-overview-grid">
-          <article class="product-screen-card">
+          <article id="reports" class="product-screen-card">
             <div class="product-screen-copy">
               <p class="eyebrow">ТО</p>
               <h3>Проблема, ответственные и история активности видны в одном месте</h3>
@@ -254,7 +240,7 @@
           <p class="eyebrow">Живая аналитика</p>
           <h2 id="analytics-title">Три интерактивных показателя для быстрой оценки смены</h2>
           <p>
-            Эти графики работают прямо на лендинге: данные можно переключать, выделять сегменты и быстро считывать состояние объектов.
+            Сводка показывает, как руководитель контролирует смену: подтвержденные NFC-события, отчеты с медиа, инженеров без отметки и объекты, где нужно усилить контроль.
           </p>
         </div>
 
@@ -297,6 +283,23 @@
             <div class="chart-insight" data-trend-insight>
               <strong>Пик недели</strong>
               <span>Воскресенье: больше всего подтвержденных событий и отчетов с медиа.</span>
+            </div>
+            <div class="trend-summary" aria-label="Операционная сводка">
+              <div>
+                <span>Контроль журнала</span>
+                <strong data-trend-summary="journal">18</strong>
+                <small>подтверждений</small>
+              </div>
+              <div>
+                <span>Ожидают связи</span>
+                <strong data-trend-summary="offline">7</strong>
+                <small>офлайн-событий</small>
+              </div>
+              <div>
+                <span>Фото и видео</span>
+                <strong data-trend-summary="media">94%</strong>
+                <small>отчетов с медиа</small>
+              </div>
             </div>
           </article>
 

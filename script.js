@@ -6,6 +6,7 @@
       axis: ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"],
       values: [28, 36, 41, 57, 52, 68, 79],
       kpis: { events: "126", media: "94%", sync: "7" },
+      summary: { journal: "18", offline: "7", media: "94%" },
       labels: [
         "Понедельник: 28 событий",
         "Вторник: 36 событий",
@@ -29,6 +30,7 @@
       axis: ["08", "10", "12", "14", "16", "18"],
       values: [3, 12, 26, 34, 42, 51],
       kpis: { events: "51", media: "88%", sync: "2" },
+      summary: { journal: "6", offline: "2", media: "88%" },
       labels: ["08:00: 3 события", "10:00: 12 событий", "12:00: 26 событий", "14:00: 34 события", "16:00: 42 события", "18:00: 51 событие"],
       notes: [
         "Первые отметки пришли до начала основной смены.",
@@ -43,6 +45,7 @@
       axis: ["1", "5", "10", "15", "20", "25", "30"],
       values: [64, 88, 116, 131, 158, 183, 211],
       kpis: { events: "211", media: "91%", sync: "12" },
+      summary: { journal: "46", offline: "12", media: "91%" },
       labels: ["1 число: 64 события", "5 число: 88 событий", "10 число: 116 событий", "15 число: 131 событие", "20 число: 158 событий", "25 число: 183 события", "30 число: 211 событий"],
       notes: [
         "Старт месяца показывает базовую нагрузку по объектам.",
@@ -69,6 +72,11 @@
       events: trendWidget.querySelector('[data-trend-kpi="events"]'),
       media: trendWidget.querySelector('[data-trend-kpi="media"]'),
       sync: trendWidget.querySelector('[data-trend-kpi="sync"]'),
+    }
+    const summaryNodes = {
+      journal: trendWidget.querySelector('[data-trend-summary="journal"]'),
+      offline: trendWidget.querySelector('[data-trend-summary="offline"]'),
+      media: trendWidget.querySelector('[data-trend-summary="media"]'),
     }
 
     const chartBounds = { left: 42, right: 604, top: 44, bottom: 208 }
@@ -110,6 +118,10 @@
 
       Object.entries(dataset.kpis).forEach(([key, value]) => {
         if (kpiNodes[key]) kpiNodes[key].textContent = value
+      })
+
+      Object.entries(dataset.summary).forEach(([key, value]) => {
+        if (summaryNodes[key]) summaryNodes[key].textContent = value
       })
 
       axis.textContent = ""
