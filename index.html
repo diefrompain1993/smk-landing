@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="SMK - система контроля присутствия инженеров, NFC-меток, отчетов и объектов через мобильное приложение и веб-админку."
+      content="SMK - система контроля инженеров и объектов через защищенные NFC-метки, офлайн-режим, отчеты и веб-админку."
     />
-    <title>SMK - контроль инженеров через NFC-метки</title>
+    <title>SMK - контроль объектов через защищенные NFC-метки</title>
     <link rel="icon" href="./assets/brand/smk-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="preload" as="image" href="./assets/screenshots/product-report-drawer.png" />
+    <link rel="preload" as="image" href="./assets/screenshots/product-dashboard-analytics.png" />
+    <link rel="preload" as="image" href="./assets/screenshots/product-dashboard-analytics-mobile.png" media="(max-width: 620px)" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -20,9 +25,9 @@
       </a>
       <nav class="nav">
         <a href="#nfc">NFC-метки</a>
+        <a href="#security">Защита</a>
         <a href="#reports">Отчеты</a>
         <a href="#admin">Админка</a>
-        <a href="#stack">Стек</a>
       </nav>
     </header>
 
@@ -32,9 +37,9 @@
         <div class="hero-shade" aria-hidden="true"></div>
         <div class="hero-content">
           <p class="eyebrow">Мобильный контроль объектов</p>
-          <h1 id="hero-title">SMK: присутствие инженеров, NFC-метки и отчеты в одной системе</h1>
+          <h1 id="hero-title">SMK: контроль инженеров и объектов через защищенные NFC-метки</h1>
           <p class="hero-copy">
-            Решение помогает видеть, кто был на объекте, когда была подтверждена работа с журналом и какие отчеты с фото или видео переданы в офис.
+            Решение помогает видеть, кто был на объекте, когда была подтверждена работа с журналом и какие отчеты с фото или видео переданы в офис, без проводной СКУД-инфраструктуры на каждой точке.
           </p>
           <div class="hero-actions" aria-label="Основные действия">
             <a class="button primary" href="#reports">Посмотреть интерфейс</a>
@@ -42,16 +47,16 @@
           </div>
           <dl class="hero-facts" aria-label="Ключевые элементы">
             <div>
-              <dt>2 типа</dt>
-              <dd>NFC-меток</dd>
+              <dt>NFC</dt>
+              <dd>присутствие и журнал</dd>
             </div>
             <div>
-              <dt>iOS / Android</dt>
-              <dd>для инженеров</dd>
+              <dt>Offline</dt>
+              <dd>очередь событий</dd>
             </div>
             <div>
-              <dt>Web admin</dt>
-              <dd>для контроля</dd>
+              <dt>Admin</dt>
+              <dd>контроль и отчеты</dd>
             </div>
           </dl>
         </div>
@@ -99,10 +104,10 @@
               <img class="tag-art" src="./assets/brand/tag.png" alt="" />
               <p class="phone-label">Сканирование NFC</p>
               <h3>БЦ Орион</h3>
-              <p>Метка присутствия подтверждена. Событие отправлено на сервер.</p>
+              <p>Метка присутствия подтверждена. Событие защищено и готово к синхронизации.</p>
               <div class="scan-status">
                 <span></span>
-                Проверено backend
+                Проверено системой
               </div>
             </div>
           </div>
@@ -119,14 +124,14 @@
               <span>02</span>
               <div>
                 <h3>Инженер сканирует телефоном</h3>
-                <p>Мобильное приложение считывает NFC-данные и передает результат в backend вместе с контекстом действия.</p>
+                <p>Мобильное приложение считывает NFC-данные, добавляет контекст действия и сохраняет событие для проверки.</p>
               </div>
             </li>
             <li>
               <span>03</span>
               <div>
-                <h3>Backend проверяет скан</h3>
-                <p>Сервер сверяет зарегистрированную метку, объект, тип действия и защищает поток от повторных сканов.</p>
+                <h3>Система проверяет событие</h3>
+                <p>Проверяются зарегистрированная метка, объект, тип действия и признаки повторного использования скана.</p>
               </div>
             </li>
             <li>
@@ -137,6 +142,60 @@
               </div>
             </li>
           </ol>
+        </div>
+      </section>
+
+      <section id="security" class="section security" aria-labelledby="security-title">
+        <div class="section-head">
+          <p class="eyebrow">Защита и офлайн</p>
+          <h2 id="security-title">СКУД без проводов: метка, ключ и проверяемое событие</h2>
+          <p>
+            SMK превращает NFC-метку в физическую контрольную точку: инженеру не нужно подключаться к терминалу, а офис получает событие с криптографической проверкой и понятным статусом синхронизации.
+          </p>
+        </div>
+
+        <div class="security-layout">
+          <div class="security-board" aria-label="Схема защищенного события">
+            <div class="security-node accent">
+              <span>01</span>
+              <strong>Энтропия устройства</strong>
+              <p>Ключ создается на устройстве и привязывается к конкретной установке приложения.</p>
+            </div>
+            <div class="security-node">
+              <span>02</span>
+              <strong>Защищенная метка</strong>
+              <p>Идентификатор, счетчик чтения и MAC помогают отличить настоящий скан от повтора.</p>
+            </div>
+            <div class="security-node">
+              <span>03</span>
+              <strong>Офлайн-очередь</strong>
+              <p>Если связи нет, событие сохраняется и отправляется после восстановления сети.</p>
+            </div>
+            <div class="security-node dark">
+              <span>04</span>
+              <strong>Проверка в офисе</strong>
+              <p>В админке видно, где и когда была сделана отметка, включая статус доставки.</p>
+            </div>
+          </div>
+
+          <div class="security-grid">
+            <article>
+              <h3>Создание ключа с помощью энтропии</h3>
+              <p>При привязке приложения создается ключевой материал на базе системной энтропии и действия пользователя. Приватная часть остается на устройстве, а система регистрирует только данные для проверки.</p>
+            </article>
+            <article>
+              <h3>Криптозащита NFC-метки</h3>
+              <p>Защищенный payload, счетчик чтения и MAC помогают выявлять подмену ссылки, повторный скан и попытку использовать старое событие повторно.</p>
+            </article>
+            <article>
+              <h3>Офлайн-режим</h3>
+              <p>Инженер может выполнить отметку без стабильного интернета. Событие попадает в локальную очередь и синхронизируется, когда связь возвращается.</p>
+            </article>
+            <article>
+              <h3>Контроль без проводов</h3>
+              <p>Метки размещаются в нужных физических точках объекта и дают эффект СКУД-сценария без прокладки кабелей и установки терминалов у каждой зоны.</p>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -173,15 +232,19 @@
           <p class="eyebrow">Веб-админка</p>
           <h2 id="admin-title">Контроль без лишних таблиц и переписок</h2>
           <p>
-            Админка показывает то, что важно руководителю: отметки, статусы объектов, отчеты, метки и монтажные договоры.
+            Админка показывает руководителю операционную картину: присутствие инженеров, проблемные объекты, отчеты, метки, офлайн-события и динамику по дням.
           </p>
         </div>
 
+        <figure class="screenshot dashboard-showcase">
+          <picture>
+            <source media="(max-width: 620px)" srcset="./assets/screenshots/product-dashboard-analytics-mobile.png" />
+            <img src="./assets/screenshots/product-dashboard-analytics.png" alt="Операционный dashboard SMK с графиками и показателями по инженерам и объектам" />
+          </picture>
+          <figcaption>Операционный dashboard: присутствие, офлайн-очередь, отчеты, проблемные объекты и динамика событий на одном экране.</figcaption>
+        </figure>
+
         <div class="screen-grid">
-          <figure class="screenshot">
-            <img src="./assets/screenshots/product-dashboard.png" alt="Главный экран контроля отметок инженеров" />
-            <figcaption>Главная: кто отметился вовремя и кто требует проверки.</figcaption>
-          </figure>
           <figure class="screenshot">
             <img src="./assets/screenshots/product-tags.png" alt="Экран управления NFC-метками" />
             <figcaption>Метки: инициализация, привязка к объекту и выбор типа.</figcaption>
@@ -191,15 +254,14 @@
             <figcaption>ТО: статус объекта, последний скан, ответственные и договор.</figcaption>
           </figure>
           <figure class="screenshot">
-            <img src="./assets/screenshots/product-installation.png" alt="Экран монтажных договоров и расходов" />
-            <figcaption>Монтаж: договоры, суммы, расходы и остаток по объектам.</figcaption>
+            <img src="./assets/screenshots/product-reports.png" alt="Список отчетов инженеров в веб-админке SMK" />
+            <figcaption>Отчеты: дата, объект, инженер, вложения и быстрый переход к деталям.</figcaption>
           </figure>
         </div>
       </section>
 
       <section class="section value" aria-labelledby="value-title">
         <div class="section-head">
-          <p class="eyebrow">Для покупателя</p>
           <h2 id="value-title">Почему это хочется внедрить</h2>
         </div>
         <div class="value-grid">
@@ -216,37 +278,10 @@
             <p>Фото, видео, описание и объект связаны между собой, поэтому материалы не теряются в чатах.</p>
           </article>
           <article>
-            <h3>Понятное внедрение</h3>
-            <p>Система состоит из мобильного приложения, backend, PostgreSQL, веб-админки и файлового хранения на Synology.</p>
+            <h3>Офлайн-устойчивость</h3>
+            <p>Отметки не пропадают при нестабильной связи: приложение сохраняет событие и показывает статус синхронизации после восстановления сети.</p>
           </article>
         </div>
-      </section>
-
-      <section id="stack" class="section stack" aria-labelledby="stack-title">
-        <div class="section-head">
-          <p class="eyebrow">Текущая архитектура</p>
-          <h2 id="stack-title">Простые блоки, которые можно развивать дальше</h2>
-          <p>
-            Бизнес-логика находится на backend. Мобильные приложения отправляют действия, а админка показывает проверенные данные.
-          </p>
-        </div>
-        <div class="stack-row" aria-label="Компоненты системы">
-          <span>iOS Swift</span>
-          <span>Android Kotlin</span>
-          <span>FastAPI</span>
-          <span>React</span>
-          <span>PostgreSQL</span>
-          <span>Synology</span>
-        </div>
-      </section>
-
-      <section class="final">
-        <div>
-          <p class="eyebrow">SMK</p>
-          <h2>Готовый демонстрационный лендинг для показа проекта</h2>
-          <p>Страница адаптирована под телефон и десктоп, использует реальные экраны админки и объясняет ценность NFC-сценария для бизнеса.</p>
-        </div>
-        <a class="button primary" href="#top">Наверх</a>
       </section>
     </main>
   </body>
