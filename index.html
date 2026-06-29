@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="SMK - система контроля присутствия инженеров, NFC-меток, отчетов и объектов через мобильное приложение и веб-админку."
+    />
+    <title>SMK - контроль инженеров через NFC-метки</title>
+    <link rel="icon" href="./assets/brand/smk-logo.png" />
+    <link rel="preload" as="image" href="./assets/screenshots/product-report-drawer.png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar" aria-label="Навигация">
+      <a class="brand" href="#top" aria-label="SMK">
+        <img src="./assets/brand/smk-logo.png" alt="" />
+        <span>SMK</span>
+      </a>
+      <nav class="nav">
+        <a href="#nfc">NFC-метки</a>
+        <a href="#reports">Отчеты</a>
+        <a href="#admin">Админка</a>
+        <a href="#stack">Стек</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Мобильный контроль объектов</p>
+          <h1 id="hero-title">SMK: присутствие инженеров, NFC-метки и отчеты в одной системе</h1>
+          <p class="hero-copy">
+            Решение помогает видеть, кто был на объекте, когда была подтверждена работа с журналом и какие отчеты с фото или видео переданы в офис.
+          </p>
+          <div class="hero-actions" aria-label="Основные действия">
+            <a class="button primary" href="#reports">Посмотреть интерфейс</a>
+            <a class="button secondary" href="#nfc">Как работают метки</a>
+          </div>
+          <dl class="hero-facts" aria-label="Ключевые элементы">
+            <div>
+              <dt>2 типа</dt>
+              <dd>NFC-меток</dd>
+            </div>
+            <div>
+              <dt>iOS / Android</dt>
+              <dd>для инженеров</dd>
+            </div>
+            <div>
+              <dt>Web admin</dt>
+              <dd>для контроля</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="section intro" aria-labelledby="intro-title">
+        <div class="section-head">
+          <p class="eyebrow">Что делает система</p>
+          <h2 id="intro-title">Убирает ручную сверку между объектами, журналами и отчетами</h2>
+        </div>
+        <div class="intro-grid">
+          <article>
+            <span class="marker"></span>
+            <h3>Факт присутствия</h3>
+            <p>Инженер подтверждает прибытие и работу на объекте через NFC-метку. Руководитель видит отметки в админке.</p>
+          </article>
+          <article>
+            <span class="marker green"></span>
+            <h3>Физический журнал</h3>
+            <p>Отдельная метка журнала подтверждает, что инженер дошел до нужной точки и работал с объектовой документацией.</p>
+          </article>
+          <article>
+            <span class="marker amber"></span>
+            <h3>Отчеты и медиа</h3>
+            <p>Описание работ, фотографии, видео и файлы попадают в единый список, где их можно фильтровать по объекту, инженеру и периоду.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="nfc" class="section nfc-section" aria-labelledby="nfc-title">
+        <div class="section-head">
+          <p class="eyebrow">NFC-метки</p>
+          <h2 id="nfc-title">Физическая точка подтверждения на объекте</h2>
+          <p>
+            NFC-метка закрепляется там, где нужно подтвердить реальное действие инженера: вход на объект, завершение смены или работу с журналом.
+          </p>
+        </div>
+
+        <div class="nfc-layout">
+          <div class="phone-card" aria-label="Сценарий инженера">
+            <div class="phone-top">
+              <span></span>
+            </div>
+            <div class="phone-screen">
+              <img class="tag-art" src="./assets/brand/tag.png" alt="" />
+              <p class="phone-label">Сканирование NFC</p>
+              <h3>БЦ Орион</h3>
+              <p>Метка присутствия подтверждена. Событие отправлено на сервер.</p>
+              <div class="scan-status">
+                <span></span>
+                Проверено backend
+              </div>
+            </div>
+          </div>
+
+          <ol class="flow-list">
+            <li>
+              <span>01</span>
+              <div>
+                <h3>Администратор готовит метку</h3>
+                <p>В админке метка инициализируется, привязывается к объекту и получает тип: присутствие или журнал.</p>
+              </div>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <h3>Инженер сканирует телефоном</h3>
+                <p>Мобильное приложение считывает NFC-данные и передает результат в backend вместе с контекстом действия.</p>
+              </div>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <h3>Backend проверяет скан</h3>
+                <p>Сервер сверяет зарегистрированную метку, объект, тип действия и защищает поток от повторных сканов.</p>
+              </div>
+            </li>
+            <li>
+              <span>04</span>
+              <div>
+                <h3>Офис видит результат</h3>
+                <p>Отметка сразу появляется в контроле присутствия, статусах объектов, отработанном времени и отчетах.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="reports" class="section showcase" aria-labelledby="reports-title">
+        <div class="section-head">
+          <p class="eyebrow">Отчеты</p>
+          <h2 id="reports-title">Детали работы открываются прямо из таблицы</h2>
+          <p>
+            Drawer с отчетом показывает дату, инженера, объект, описание работ и вложения. Это удобно для быстрой проверки без перехода между страницами.
+          </p>
+        </div>
+        <figure class="screenshot large">
+          <img src="./assets/screenshots/product-report-drawer.png" alt="Детали отчета с вложениями в веб-админке SMK" />
+          <figcaption>Отчет с фото и видео: все материалы по объекту собраны в одном месте.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section showcase compact-showcase" aria-labelledby="to-title">
+        <div class="section-head">
+          <p class="eyebrow">ТО</p>
+          <h2 id="to-title">По объекту видна проблема, ответственные и история активности</h2>
+          <p>
+            В разделе ТО строка объекта открывает drawer с последним сканом, договором, ответственным инженером и историей отметок.
+          </p>
+        </div>
+        <figure class="screenshot large">
+          <img src="./assets/screenshots/product-to-drawer.png" alt="Детали объекта в разделе ТО веб-админки SMK" />
+          <figcaption>Карточка объекта помогает быстро понять, что произошло и кто отвечает за следующий шаг.</figcaption>
+        </figure>
+      </section>
+
+      <section id="admin" class="section screens" aria-labelledby="admin-title">
+        <div class="section-head">
+          <p class="eyebrow">Веб-админка</p>
+          <h2 id="admin-title">Контроль без лишних таблиц и переписок</h2>
+          <p>
+            Админка показывает то, что важно руководителю: отметки, статусы объектов, отчеты, метки и монтажные договоры.
+          </p>
+        </div>
+
+        <div class="screen-grid">
+          <figure class="screenshot">
+            <img src="./assets/screenshots/product-dashboard.png" alt="Главный экран контроля отметок инженеров" />
+            <figcaption>Главная: кто отметился вовремя и кто требует проверки.</figcaption>
+          </figure>
+          <figure class="screenshot">
+            <img src="./assets/screenshots/product-tags.png" alt="Экран управления NFC-метками" />
+            <figcaption>Метки: инициализация, привязка к объекту и выбор типа.</figcaption>
+          </figure>
+          <figure class="screenshot">
+            <img src="./assets/screenshots/product-object-statuses.png" alt="Экран статусов объектов" />
+            <figcaption>ТО: статус объекта, последний скан, ответственные и договор.</figcaption>
+          </figure>
+          <figure class="screenshot">
+            <img src="./assets/screenshots/product-installation.png" alt="Экран монтажных договоров и расходов" />
+            <figcaption>Монтаж: договоры, суммы, расходы и остаток по объектам.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section value" aria-labelledby="value-title">
+        <div class="section-head">
+          <p class="eyebrow">Для покупателя</p>
+          <h2 id="value-title">Почему это хочется внедрить</h2>
+        </div>
+        <div class="value-grid">
+          <article>
+            <h3>Меньше спорных отметок</h3>
+            <p>NFC-метка привязана к конкретному объекту и действию, поэтому отметка становится проверяемым событием.</p>
+          </article>
+          <article>
+            <h3>Быстрее контроль инженеров</h3>
+            <p>Руководитель видит проблемные зоны сразу: кто не отметился, где есть проблема, какие отчеты пришли.</p>
+          </article>
+          <article>
+            <h3>Порядок в отчетности</h3>
+            <p>Фото, видео, описание и объект связаны между собой, поэтому материалы не теряются в чатах.</p>
+          </article>
+          <article>
+            <h3>Понятное внедрение</h3>
+            <p>Система состоит из мобильного приложения, backend, PostgreSQL, веб-админки и файлового хранения на Synology.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="stack" class="section stack" aria-labelledby="stack-title">
+        <div class="section-head">
+          <p class="eyebrow">Текущая архитектура</p>
+          <h2 id="stack-title">Простые блоки, которые можно развивать дальше</h2>
+          <p>
+            Бизнес-логика находится на backend. Мобильные приложения отправляют действия, а админка показывает проверенные данные.
+          </p>
+        </div>
+        <div class="stack-row" aria-label="Компоненты системы">
+          <span>iOS Swift</span>
+          <span>Android Kotlin</span>
+          <span>FastAPI</span>
+          <span>React</span>
+          <span>PostgreSQL</span>
+          <span>Synology</span>
+        </div>
+      </section>
+
+      <section class="final">
+        <div>
+          <p class="eyebrow">SMK</p>
+          <h2>Готовый демонстрационный лендинг для показа проекта</h2>
+          <p>Страница адаптирована под телефон и десктоп, использует реальные экраны админки и объясняет ценность NFC-сценария для бизнеса.</p>
+        </div>
+        <a class="button primary" href="#top">Наверх</a>
+      </section>
+    </main>
+  </body>
+</html>
